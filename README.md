@@ -1341,6 +1341,8 @@ Most native React form components support both controlled and uncontrolled usage
     3. State abstraction and manipulation.
     4. Props manipulation.
 
+   **Update:** The example by Khabir in this [link](https://stackoverflow.com/questions/45935409/understanding-react-higher-order-components) provides better clarity.
+
     **[⬆ Back to Top](#table-of-contents)**
 
 38. ### How to create props proxy for HOC component?
