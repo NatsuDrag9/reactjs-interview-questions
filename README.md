@@ -780,21 +780,24 @@
 
     **Note:** You can directly assign to the state object either in _constructor_ or using latest javascript's class field declaration syntax.
     **Update:** Sharing Pranesh Ravi's answer on [stack overflow](https://stackoverflow.com/questions/37755997/why-cant-i-directly-modify-a-components-state-really):
-    > To make React work like this, developers made React similar to functional programming. The rule of thumb of functional programming is immutability. Let me explain it loud and clear.
-
-How does the unidirectional flow works?
-
-    states are a data store which contains the data of a component.
-    The view of a component renders based on the state.
-    When the view needs to change something on the screen, that value should be supplied from the store.
-    To make this happen, React provides setState() function which takes in an object of new states and does a compare and merge(similar to object.assign()) over the previous state and adds the new state to the state data store.
-    Whenever the data in the state store changes, react will trigger an re-render with the new state which the view consumes and shows it on the screen.
-
-This cycle will continue throughout the component's lifetime.
-
-If you see the above steps, it clearly shows a lot of things are happening behind when you change the state. So, when you mutate the state directly and call setState() with an empty object. The previous state will be polluted with your mutation. Due to which, the shallow compare and merge of two states will be disturbed or won't happen, because you'll have only one state now. This will disrupt all the React's Lifecycle Methods.
-
-As a result, your app will behave abnormal or even crash. Most of the times, it won't affect your app because all the apps which we use for testing this are pretty small.
+    > To make React work like this, developers made React similar to functional programming. The rule of thumb of functional programming is immutability. Let me explain it
+    > loud and clear.
+    > 
+    > How does the unidirectional flow works?
+    > *states are a data store which contains the data of a component.
+    > *The view of a component renders based on the state.
+    > *When the view needs to change something on the screen, that value should be supplied from the store.
+    > *To make this happen, React provides setState() function which takes in an object of new states and does a compare and merge(similar to object.assign()) over the
+    > previous state and adds the new state to the state data store.
+    > *Whenever the data in the state store changes, react will trigger an re-render with the new state which the view consumes and shows it on the screen.
+    >
+    > This cycle will continue throughout the component's lifetime.
+    >
+    > If you see the above steps, it clearly shows a lot of things are happening behind when you change the state. So, when you mutate the state directly and call setState()
+    > with an empty object. The previous state will be polluted with your mutation. Due to which, the shallow compare and merge of two states will be disturbed or won't
+    > happen, because you'll have only one state now. This will disrupt all the React's Lifecycle Methods.
+    >
+    > As a result, your app will behave abnormal or even crash. Most of the times, it won't affect your app because all the apps which we use for testing this are pretty small.
 
     **[⬆ Back to Top](#table-of-contents)**
 
